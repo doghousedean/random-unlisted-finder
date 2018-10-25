@@ -4,7 +4,7 @@
 
 just run the script through python3
 
-`./randytdl.py`
+`./rand-unlisted.py`
 
 couple of options in the file:
 
