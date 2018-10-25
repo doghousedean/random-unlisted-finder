@@ -12,8 +12,9 @@ delay = 3
 
 fh = open(out_file,'a+')
 
-print("-" * 25)
+print("-" * len("Finding random unlisted videos for {} tries".format(tries)))
 print("Finding random unlisted videos for {} tries".format(tries))
+print("-" * len("Finding random unlisted videos for {} tries".format(tries)))
 for x in range(tries):
     ran = ''.join([random.choice(string.ascii_letters + string.digits) for n in range(11)])
     out = "https://youtu.be/{}".format(ran)
