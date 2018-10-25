@@ -7,7 +7,9 @@ import time
 from urllib.request import urlopen
 
 out_file = 'urllist.txt'
+<<<<<<< HEAD
 tries = 100000
+delay = 3
 
 fh = open(out_file,'a+')
 
@@ -32,6 +34,6 @@ for x in range(tries):
 
     if found == 0:
         print("Nothing in try {} - {}".format(x,out))
-    time.sleep(5)
+    time.sleep(delay)
 fh.close()
 
