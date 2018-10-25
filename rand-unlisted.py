@@ -3,10 +3,12 @@
 
 import random
 import string
+import time
 from urllib.request import urlopen
 
 out_file = 'urllist.txt'
 tries = 1000
+delay = 3
 
 fh = open(out_file,'a+')
 
@@ -26,5 +28,6 @@ for x in range(tries):
                 break
     if found == 0:
         print("Nothing in try {} - {}".format(x,out))
+    time.sleep(delay)
 fh.close()
 
