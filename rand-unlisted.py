@@ -3,10 +3,11 @@
 
 import random
 import string
+import time
 from urllib.request import urlopen
 
 out_file = 'urllist.txt'
-tries = 1000
+tries = 100000
 
 fh = open(out_file,'a+')
 
@@ -24,7 +25,13 @@ for x in range(tries):
                 fh.write(out)
                 found = 1
                 break
+            if 'This video is unavailable' not in line:
+                print("Live video: {}".format(out))
+                fh.write("LIVE:{}".format(out))
+                break
+
     if found == 0:
         print("Nothing in try {} - {}".format(x,out))
+    time.sleep(5)
 fh.close()
 
