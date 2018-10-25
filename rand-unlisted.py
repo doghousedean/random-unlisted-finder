@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 ## Find random unlisted videos
 
 import random
@@ -18,23 +18,22 @@ for x in range(tries):
     ran = ''.join([random.choice(string.ascii_letters + string.digits) for n in range(11)])
     out = "https://youtu.be/{}".format(ran)
     found = 0
-    live = 0
+    live = 1
     with urlopen(out) as html:
         for line in html:
-            line = line.decode('utf-8')
+            line = html.read().decode('utf-8')
             if 'This video is unlisted' in line:
                 print("Found in try {} -  {}".format(x,out))
                 fh.write(out)
                 found = 1
                 break
             if 'This video is unavailable' in line:
-                print("Video Unavailable: {}".format(out))
+                live = 0
                 break
-        live = 1
 
     if found == 0:
         print("Nothing in try {} - {}".format(x,out))
-    if live = 1:
+    if live == 1:
         print("Live video: {}".format(out))
         fh.write("LIVE:{}".format(out))
 
