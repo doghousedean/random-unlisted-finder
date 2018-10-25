@@ -25,7 +25,7 @@ for x in range(tries):
             line = html.read().decode('utf-8')
             if 'This video is unlisted' in line:
                 print("Found in try {} -  {}".format(x,out))
-                fh.write(out)
+                fh.write("{}\n".format(out))
                 found = 1
                 break
             if 'This video is unavailable' in line:
@@ -36,7 +36,7 @@ for x in range(tries):
         print("Nothing in try {} - {}".format(x,out))
     if live == 1:
         print("Live video: {}".format(out))
-        fh.write("LIVE:{}".format(out))
+        fh.write("LIVE:{}\n".format(out))
 
     time.sleep(delay)
 fh.close()
