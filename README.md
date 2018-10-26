@@ -1,5 +1,7 @@
 # Random Unlisted Video Finder
 
+This works but will probably trigger a bot detector on youtube and get yourself banned, could add a crazy long timer I guess but probably no point
+
 ## HOWTO
 
 just run the script through python3
